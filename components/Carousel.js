@@ -2,7 +2,6 @@
   STRETCH GOAL
   STRETCH GOAL
   STRETCH GOAL
-
   If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to write a function that creates the carousel component, you will find the HTML below.
     2. You will need to grab a reference to all of the images
@@ -11,8 +10,7 @@
     5. Think of how you would animate this component. Make the cards slide in and out, or fade. It's up to you!
     6. Have fun!
 */
-
-/* HTML:
+/* HTML: all inside <div class="carousel-container">
   <div class="carousel">
     <div class="left-button"> < </div>
     <img src="https://tk-assets.lambdaschool.com/ba687af4-3a1e-43d7-87b2-f30453264c9d_mountains.jpeg" />
@@ -22,3 +20,14 @@
     <div class="right-button"> > </div>
   </div>
 */
+function carouselComp () {
+  const carouselParent = document.createElement("div");
+  carouselParent.classList.add("carousel");
+  const leftbutton = document.createElement("div");
+  leftbutton.classList.add("carousel");
+  const img1 = document.createElement("img");
+  const img2 = document.createElement("")
+  return carouselParent;
+}
+const carouselPlaceholder = document.querySelector(".carousel-constainer");
+carouselPlaceholder.appendChild(carouselComp())

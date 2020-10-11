@@ -32,14 +32,38 @@ const sampleObject = {
   },
 };*/
 //actual data:
-axios.get("https://lambda-times-api.herokuapp.com/articles").then((data) => {
-  const javascriptData = data.data.articles.javascript;
-  //console.log(javascriptData);
-  javascriptData.forEach((article) => {
-    const cardsParent = document.querySelector(".cards-container");
-    cardsParent.appendChild(newCard(article));
+axios
+  .get("https://lambda-times-api.herokuapp.com/articles")
+  .then((data) => {
+    const javascriptData = data.data.articles.javascript;
+    const bootstrapData = data.data.articles.bootstrap;
+    const technologyData = data.data.articles.technology;
+    const jqueryData = data.data.articles.jquery;
+    const nodeData = data.data.articles.node;
+    javascriptData.forEach((article) => {
+      const cardsParent = document.querySelector(".cards-container");
+      cardsParent.appendChild(newCard(article));
+    });
+    bootstrapData.forEach((article) => {
+      const cardsParent = document.querySelector(".cards-container");
+      cardsParent.appendChild(newCard(article));
+    });
+    technologyData.forEach((article) => {
+      const cardsParent = document.querySelector(".cards-container");
+      cardsParent.appendChild(newCard(article));
+    });
+    jqueryData.forEach((article) => {
+      const cardsParent = document.querySelector(".cards-container");
+      cardsParent.appendChild(newCard(article));
+    });
+    nodeData.forEach((article) => {
+      const cardsParent = document.querySelector(".cards-container");
+      cardsParent.appendChild(newCard(article));
+    });
+  })
+  .catch((err) => {
+    console.log(`${err}`);
   });
-});
 function newCard(object) {
   //new elements for the cards
   const cardParent = document.createElement("div");
